@@ -11,8 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import utils.SceneNavigator;
 
 import java.io.IOException;
+
+import static utils.AlertHelper.mostrarAlerta;
+import static utils.SceneNavigator.cargarDashboard;
 
 /**
  * Controlador para el formulario de creación de productos
@@ -106,17 +110,7 @@ public class FormularioProductoController {
      * Vuelve a mostrar el dashboard
      */
     private void volverAlDashboard() {
-        try {
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/fx10/vista/Dashboard.fxml"));
-            Parent dashboard = loader.load();
-            
-            contenedorPrincipal.getChildren().clear();
-            contenedorPrincipal.getChildren().add(dashboard);
-            
-        } catch (IOException e) {
-            mostrarAlerta("Error", "No se pudo volver al dashboard", Alert.AlertType.ERROR);
-            e.printStackTrace();
-        }
+       cargarDashboard(contenedorPrincipal);
     }
 
     /**
@@ -145,18 +139,6 @@ public class FormularioProductoController {
         }
         return true;
     }
-
-    /**
-     * Muestra una alerta al usuario
-     */
-    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
-        Alert alerta = new Alert(tipo);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
 
 }
 

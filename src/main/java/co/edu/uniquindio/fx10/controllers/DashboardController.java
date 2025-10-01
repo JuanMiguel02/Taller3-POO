@@ -15,6 +15,8 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
+import static utils.AlertHelper.mostrarAlerta;
+
 /**
  * Controlador para el Dashboard principal
  */
@@ -25,7 +27,6 @@ public class DashboardController {
 
     @FXML
     private Label lblTitulo;
-
 
     /**
      * Maneja el evento de click en el botón "Crear Producto"
@@ -68,14 +69,6 @@ public class DashboardController {
             mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);
             e.printStackTrace();
         }
-    }
-
-    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
-        Alert alerta = new Alert(tipo);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
     }
 
     public HBox getContenedorPrincipal() {

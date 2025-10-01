@@ -12,8 +12,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import utils.SceneNavigator;
 
 import java.io.IOException;
+
+import static utils.AlertHelper.mostrarAlerta;
+import static utils.SceneNavigator.cargarDashboard;
 
 /**
  * Controlador para el Dashboard principal
@@ -50,6 +54,7 @@ public class ListadoProductoController {
     @FXML
     private Button btnEliminar;
 
+    private SceneNavigator sceneNavigator;
     private ProductoRepository productoRepository;
     private ObservableList<Producto> listaProductos;
     private DashboardController dashboardController;
@@ -125,29 +130,8 @@ public class ListadoProductoController {
      * Restaura la vista del dashboard
      */
     public void onVolverDashboard() {
-        try {
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/fx10/vista/Dashboard.fxml"));
-            Parent dashboard = loader.load();
-            
-            contenedorPrincipal.getChildren().clear();
-            contenedorPrincipal.getChildren().add(dashboard);
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+       cargarDashboard(contenedorPrincipal);
     }
-
-    /**
-     * Muestra una alerta al usuario
-     */
-    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
-        Alert alerta = new Alert(tipo);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
-
 
 }
 
