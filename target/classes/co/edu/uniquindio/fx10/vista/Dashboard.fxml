@@ -9,44 +9,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="contenedorPrincipal" minHeight="600.0" minWidth="900.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.fx10.controllers.DashboardController">
+<HBox fx:id="contenedorPrincipal" alignment="CENTER" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.fx10.controllers.DashboardController">
    <children>
-      <VBox prefHeight="478.0" prefWidth="441.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="416.0" HBox.hgrow="ALWAYS">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="269.0" prefWidth="381.0" style="-fx-text-fill: #2c3e50;" text="DASHBOARD DE PRODUCTOS" textAlignment="CENTER" textOverrun="CLIP" underline="true" wrapText="true" VBox.vgrow="ALWAYS">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </VBox.margin>
+            <Label prefHeight="136.0" prefWidth="343.0" text="DASHBOARD DE PRODUCTOS" textAlignment="CENTER" underline="true" wrapText="true" VBox.vgrow="NEVER">
                <font>
-                  <Font name="System Bold" size="48.0" />
+                  <Font size="40.0" />
                </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </Label>
-            <VBox prefHeight="102.0" prefWidth="493.0" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="btnGuardarProducto" mnemonicParsing="false" onAction="#onCargarFormulario" prefHeight="64.0" prefWidth="167.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Agregar Producto">
+                  <Button fx:id="btnGuardarProducto" mnemonicParsing="false" onAction="#onCargarFormulario" prefHeight="60.0" prefWidth="229.0" style="-fx-background-color: #30373e; -fx-text-fill: white; -fx-font-size: 14px; -fx-cursor: hand; -fx-background-radius: 5px;" text="Guardar Producto">
                      <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
+                        <Insets top="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="btnVerProducto" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#onVerLista" prefHeight="64.0" prefWidth="167.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-cursor: hand; -fx-background-radius: 5;" text="Ver Productos">
+                  <Button fx:id="btnVerProducto" layoutX="60.0" layoutY="30.0" mnemonicParsing="false" onAction="#onVerLista" prefHeight="60.0" prefWidth="229.0" style="-fx-background-color: #30373e; -fx-text-fill: white; -fx-font-size: 14px; -fx-cursor: hand; -fx-background-radius: 5px;" text="Ver Productos">
                      <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
+                        <Insets top="40.0" />
                      </VBox.margin>
                   </Button>
                </children>
             </VBox>
          </children>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="478.0" prefWidth="356.0" style="-fx-background-color: #30373e;" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="372.0" style="-fx-background-color: #30373e;" HBox.hgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="402.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+            <ImageView fitHeight="388.0" fitWidth="308.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                <image>
                   <Image url="@../../../../../images/diseno-de-producto.png" />
                </image>
             </ImageView>
-         </children></VBox>
+         </children>
+      </VBox>
    </children>
 </HBox>

@@ -4,7 +4,8 @@ Sistema de gestión de productos desarrollado con JavaFX que permite crear, list
 
 ## 🚀 Características
 
-- **Dashboard principal** con tabla de productos
+- **Dashboard principal** que permite ver y guardar productos
+- **Listado de productos** representado en una tabla organizada
 - **Formulario de creación** de productos
 - **Navegación dinámica** entre vistas
 - **Gestión centralizada** de datos con patrón Singleton
@@ -39,17 +40,25 @@ fx10/
 │       │   ├── module-info.java
 │       │   └── co/edu/uniquindio/fx10/
 │       │       ├── App.java                          # Clase principal
-│       │       ├── modelo/
+│       │       ├── models/
 │       │       │   └── Producto.java                 # Modelo de datos
-│       │       ├── repositorio/
+│       │       ├── repositories/
 │       │       │   └── ProductoRepository.java       # Gestión del ArrayList
-│       │       └── controlador/
-│       │           ├── DashboardController.java      # Controlador del dashboard
+│       │       └── controllers/
+│       │           ├── DashboardController.java          # Controlador del dashboard
 │       │           └── FormularioProductoController.java # Controlador del formulario
+│       │           └── ListadoProductoController.java    # Controlador de la tabla de productos
+│       │       └── utils/
+│       │           ├── AlertHelper.java                  # Métodos para crear alertas 
+│       │           └── SceneNavigator.java               # Métodos para cambiar entre escenas
+│       │           └── DashboardAware.java               # Métodos para establecer el controlador del Dashboard
 │       └── resources/
 │           └── co/edu/uniquindio/fx10/vista/
 │               ├── Dashboard.fxml                    # Vista del dashboard
 │               └── FormularioProducto.fxml           # Vista del formulario
+│               └── ListadoProducto.fxml              # Vista de la tabla
+│           └── images/
+│               └── diseno-de-producto.png            # Imagen usada para el dashboard
 └── pom.xml                                           # Configuración Maven
 ```
 
@@ -107,5 +116,6 @@ La aplicación incluye 3 productos de ejemplo:
 
 ## 👨‍💻 Autor
 
-Proyecto desarrollado para el curso de Programación 1 - Universidad del Quindío
+- Proyecto desarrollado para el curso de Programación 1 - Universidad del Quindío
+- Actualizado por Juan Miguel Henao
 
