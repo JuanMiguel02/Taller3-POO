@@ -1,20 +1,15 @@
 package co.edu.uniquindio.fx10.controllers;
 
-import co.edu.uniquindio.fx10.App;
 import co.edu.uniquindio.fx10.models.Producto;
 import co.edu.uniquindio.fx10.repositories.ProductoRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import utils.DashboardAware;
 import utils.SceneNavigator;
-
-import java.io.IOException;
 
 import static utils.AlertHelper.mostrarAlerta;
 import static utils.SceneNavigator.cargarDashboard;
@@ -22,7 +17,7 @@ import static utils.SceneNavigator.cargarDashboard;
 /**
  * Controlador para el Dashboard principal
  */
-public class ListadoProductoController {
+public class ListadoProductoController implements DashboardAware {
 
     @FXML
     private HBox contenedorPrincipal;
@@ -47,12 +42,6 @@ public class ListadoProductoController {
 
     @FXML
     private TableColumn<Producto, Integer> colStock;
-
-    @FXML
-    private Button btnCrearProducto;
-
-    @FXML
-    private Button btnEliminar;
 
     private SceneNavigator sceneNavigator;
     private ProductoRepository productoRepository;
@@ -121,9 +110,13 @@ public class ListadoProductoController {
         });
     }
 
+    @Override
     public void setDashboardController(DashboardController dashboardController) {
         this.dashboardController = dashboardController;
-        this.contenedorPrincipal = dashboardController.getContenedorPrincipal();
+    }
+    @Override
+    public void setContenedorPrincipal(HBox contenedorPrincipal){
+        this.contenedorPrincipal = contenedorPrincipal;
     }
 
     /**
@@ -132,6 +125,5 @@ public class ListadoProductoController {
     public void onVolverDashboard() {
        cargarDashboard(contenedorPrincipal);
     }
-
 }
 

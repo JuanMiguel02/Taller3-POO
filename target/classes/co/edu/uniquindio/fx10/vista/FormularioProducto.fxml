@@ -25,7 +25,7 @@
     </Label>
 
     <!-- Formulario -->
-    <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" VBox.vgrow="ALWAYS">
+    <VBox minHeight="417.0" minWidth="900.0" prefHeight="417.0" prefWidth="900.0" spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" VBox.vgrow="NEVER">
         <padding>
             <Insets bottom="30" left="30" right="30" top="30" />
         </padding>
@@ -63,7 +63,7 @@
             <RowConstraints />
          </rowConstraints>
         </GridPane>
-
+   
         <!-- Botones -->
         <HBox alignment="CENTER_RIGHT" spacing="15">
             <VBox.margin>

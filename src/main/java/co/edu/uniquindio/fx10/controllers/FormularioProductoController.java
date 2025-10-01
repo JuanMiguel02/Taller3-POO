@@ -1,19 +1,12 @@
 package co.edu.uniquindio.fx10.controllers;
 
-import co.edu.uniquindio.fx10.App;
 import co.edu.uniquindio.fx10.models.Producto;
 import co.edu.uniquindio.fx10.repositories.ProductoRepository;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import utils.SceneNavigator;
-
-import java.io.IOException;
+import utils.DashboardAware;
 
 import static utils.AlertHelper.mostrarAlerta;
 import static utils.SceneNavigator.cargarDashboard;
@@ -21,7 +14,7 @@ import static utils.SceneNavigator.cargarDashboard;
 /**
  * Controlador para el formulario de creación de productos
  */
-public class FormularioProductoController {
+public class FormularioProductoController implements DashboardAware {
 
     @FXML
     private TextField txtCodigo;
@@ -38,12 +31,6 @@ public class FormularioProductoController {
     @FXML
     private TextField txtStock;
 
-    @FXML
-    private Button btnGuardar;
-
-    @FXML
-    private Button btnCancelar;
-
     private ProductoRepository productoRepository;
     private ListadoProductoController listadoProductoController;
     @FXML private HBox contenedorPrincipal;
@@ -52,14 +39,6 @@ public class FormularioProductoController {
     @FXML
     public void initialize() {
         productoRepository = ProductoRepository.getInstancia();
-    }
-
-    /**
-     * Establece el controlador del dashboard para poder regresar
-     */
-    public void setDashboardController(DashboardController dashboardController) {
-        this.dashboardController = dashboardController;
-        this.contenedorPrincipal = dashboardController.getContenedorPrincipal();
     }
 
     /**
@@ -138,6 +117,14 @@ public class FormularioProductoController {
             return false;
         }
         return true;
+    }
+    @Override
+    public void setDashboardController(DashboardController dashboardController) {
+        this.dashboardController = dashboardController;
+    }
+    @Override
+    public void setContenedorPrincipal(HBox contenedorPrincipal){
+        this.contenedorPrincipal = contenedorPrincipal;
     }
 
 }
