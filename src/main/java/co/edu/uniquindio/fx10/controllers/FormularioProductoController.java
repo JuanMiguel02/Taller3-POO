@@ -31,9 +31,10 @@ public class FormularioProductoController implements DashboardAware {
     @FXML
     private TextField txtStock;
 
+    @FXML private HBox contenedorPrincipal;
+
     private ProductoRepository productoRepository;
     private ListadoProductoController listadoProductoController;
-    @FXML private HBox contenedorPrincipal;
     private DashboardController dashboardController;
 
     @FXML
@@ -44,6 +45,7 @@ public class FormularioProductoController implements DashboardAware {
     /**
      * Maneja el evento de guardar producto
      */
+
     @FXML
     private void onGuardarProducto() {
         if (!validarCampos()) {
@@ -89,6 +91,7 @@ public class FormularioProductoController implements DashboardAware {
      * Vuelve a mostrar el dashboard
      */
     private void volverAlDashboard() {
+        //Llama al metodo que carga el dashboard principal
        cargarDashboard(contenedorPrincipal);
     }
 
@@ -118,6 +121,8 @@ public class FormularioProductoController implements DashboardAware {
         }
         return true;
     }
+
+
     @Override
     public void setDashboardController(DashboardController dashboardController) {
         this.dashboardController = dashboardController;

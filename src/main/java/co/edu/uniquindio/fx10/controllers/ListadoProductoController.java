@@ -15,15 +15,12 @@ import static utils.AlertHelper.mostrarAlerta;
 import static utils.SceneNavigator.cargarDashboard;
 
 /**
- * Controlador para el Dashboard principal
+ * Controlador para la lista de productos
  */
 public class ListadoProductoController implements DashboardAware {
 
     @FXML
     private HBox contenedorPrincipal;
-
-    @FXML
-    private Label lblTitulo;
 
     @FXML
     private TableView<Producto> tablaProductos;

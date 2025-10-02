@@ -13,10 +13,11 @@ public class DashboardController {
     private HBox contenedorPrincipal;
 
     /**
-     * Maneja el evento de click en el botón "Crear Producto"
+     * Maneja los eventos para cargar las otras ventanas
      */
     @FXML
     private void onCargarFormulario() {
+        //llama al metodo que carga las vistas
         cargarVista(this, "/co/edu/uniquindio/fx10/vista/FormularioProducto.fxml");
 
     }

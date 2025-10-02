@@ -66,9 +66,10 @@ fx10/
 
 ### Dashboard Principal
 
-- Visualiza todos los productos en una tabla
-- Haz clic en "Crear Producto" para agregar un nuevo producto
-- Selecciona un producto y haz clic en "Eliminar Producto" para eliminarlo
+- Ventana principal con menú de opciones
+- Haz clic en "Añadir Nuevo Producto" para agregar un nuevo producto
+- Selecciona "Ver Productos" para desplegar la tabla de productos
+
 
 ### Crear Producto
 
@@ -81,6 +82,9 @@ fx10/
    - Stock
 3. Haz clic en "Guardar Producto" o "Cancelar"
 
+### Crear Producto
+- Selecciona un producto y haz clic en "Eliminar Producto" para eliminarlo
+
 ## 🏗️ Arquitectura
 
 ### Patrón Singleton
@@ -89,6 +93,7 @@ El `ProductoRepository` utiliza el patrón Singleton para garantizar que existe 
 ### Separación de Capas
 - **Modelo**: Clase `Producto` con los atributos del negocio
 - **Repositorio**: Gestión centralizada de los datos
+- **Utilis**: Métodos auxiliares que permiten la reutilización
 - **Controlador**: Lógica de negocio y coordinación entre vista y modelo
 - **Vista**: Archivos FXML con la interfaz de usuario
 

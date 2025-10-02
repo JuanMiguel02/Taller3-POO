@@ -23,7 +23,7 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="btnGuardarProducto" mnemonicParsing="false" onAction="#onCargarFormulario" prefHeight="60.0" prefWidth="229.0" style="-fx-background-color: #30373e; -fx-text-fill: white; -fx-font-size: 14px; -fx-cursor: hand; -fx-background-radius: 5px;" text="Guardar Producto">
+                  <Button fx:id="btnGuardarProducto" mnemonicParsing="false" onAction="#onCargarFormulario" prefHeight="60.0" prefWidth="229.0" style="-fx-background-color: #30373e; -fx-text-fill: white; -fx-font-size: 14px; -fx-cursor: hand; -fx-background-radius: 5px;" text="Añadir Nuevo Producto">
                      <VBox.margin>
                         <Insets top="40.0" />
                      </VBox.margin>
